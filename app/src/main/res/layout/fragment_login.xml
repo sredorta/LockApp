@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/grass_texture"
+    android:padding="10dp"
+    >
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
+        android:layout_margin="0dp">
+
+        <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment_login_logo"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:background="@color/colorPrimaryDark"
+        android:scaleType="fitCenter"
+        android:src="@drawable/mylogo"
+        android:adjustViewBounds="false"
+        android:layout_gravity="top|center_horizontal"
+            android:layout_weight="2"
+            android:layout_margin="20dp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+            <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/fragment_container_recycleview_accounts"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2">
+            </FrameLayout>
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:inputType="textPersonName"
+                android:hint="password"
+                android:ems="10"
+                android:id="@+id/fragment_login_EditText_password"
+                android:textColor="@color/colorWhite"
+                android:backgroundTint="@color/colorWhite"
+                android:layout_alignBaseline="@+id/button2"
+                android:layout_alignBottom="@+id/button2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="1"
+                android:password="true" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/button_login"
+                android:textColor="@color/colorWhite"
+                android:text="CONNECT"
+                android:id="@+id/fragment_login_Button_connect"
+                android:layout_weight="1"
+                android:alpha="0.8"
+                android:layout_margin="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="OR"
+                android:id="@+id/textView"
+                android:textColor="@color/colorWhite"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical"
+                android:textStyle="italic" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/button_login"
+                android:text="CREATE NEW ACCOUNT"
+                android:id="@+id/fragment_login_Button_create"
+                android:textColor="@color/colorWhite"
+                android:layout_weight="1"
+                android:alpha="0.8"
+                android:layout_margin="5dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

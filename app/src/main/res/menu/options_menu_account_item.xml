@@ -3,7 +3,7 @@
     <item
         android:id="@+id/options_menu_account_item_edit"
         android:icon="@android:drawable/ic_menu_edit"
-        android:title="Edit" />
+        android:title="Edit preferences" />
     <item
         android:id="@+id/options_menu_account_item_remove"
         android:icon="@android:drawable/ic_menu_delete"

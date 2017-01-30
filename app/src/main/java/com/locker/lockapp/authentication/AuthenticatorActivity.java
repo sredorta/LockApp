@@ -36,6 +36,9 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity {
         myAccountSettings = AccountGeneral.getInstance();
         myIntent = myAccountSettings.init(getApplicationContext(),getIntent());
 
+        //We only allow one account per device... so we check how many accounts exists
+
+
 
         //If the incomming intent was specifying that we want to add an account then start the SignUp
         if (myIntent.getBooleanExtra(ARG_IS_ADDING_NEW_ACCOUNT,false)) {

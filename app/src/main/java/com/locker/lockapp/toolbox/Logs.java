@@ -44,6 +44,7 @@ public class Logs {
         settings.put(JsonItem.class,                        true );
         settings.put(QueryPreferences.class,                true );
         settings.put(AuthenticatorActivity.class,           true );
+        settings.put(LockerAuthenticator.class,             true );
         settings.put(Toolbox.class,                         true );
         settings.put(SignUpFragment.class,                  true );
         settings.put(SignInFragment.class,                  true );

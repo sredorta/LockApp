@@ -30,16 +30,17 @@ import java.util.Map;
 public class CloudFetchr {
 
     private static final String URI_BASE_GOOGLE = "http://clients3.google.com/generate_204";    // Only required to check if internet is available
-    private static final String URI_BASE = "http://10.0.2.2/example1/api/";                     // Base adress of the server
     private static final String PHP_CONNECTION_CHECK = "locker.connection.check.php";           // Params required : none
     private static final String PHP_USER_REMOVE = "locker.users.remove.php";                    // Params required : phone,email,user_table
     private static final String PHP_USER_SIGNIN = "locker.users.signin.php";                    // Params required : user,password,user_table and returns token
     private static final String PHP_USER_SIGNUP = "locker.users.signup.php";                    // Params required : user,password,email,user_table and returns token
     private static final String PHP_USER_PASSWORD = "locker.users.setpassword.php";                    // Params required : user,password,email,user_table and returns token
-
     private static final String PHP_USER_TOKEN = "locker.users.checktoken.php";                 // Params required : email,token and returns if token is valid or not
-
     private String SEND_METHOD = "POST";                                                        // POST or GET method
+
+    public static final String URI_BASE_DEBUG = "http://10.0.2.2/example1/api/";                //localhost controlled by prefs
+    public static final String URI_BASE_PROD = "http://ibikestation.000webhostapp.com/api/";        //realserver controlled by prefs
+    public static String URI_BASE = "http://10.0.2.2/example1/api/";
 
 
     //We try to see if we can connect to google for example

@@ -2,6 +2,7 @@ package com.locker.lockapp.authentication;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -18,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.locker.lockapp.R;
+import com.locker.lockapp.dao.QueryPreferences;
 import com.locker.lockapp.toolbox.Logs;
 
 import java.util.ArrayList;
@@ -138,6 +140,7 @@ public class AccountListFragment extends Fragment {
             //Update the user name so that we check against new account
             /////myAccountSettings.setAccountName(mAccountManager.getUserData(mAccount, PARAM_USER_ACCOUNT));
             myAccountSettings.setDataFromAccount(mAccount);
+            Toast.makeText(getActivity(),"account first name:" + myAccountSettings.getAccountFirstName(), Toast.LENGTH_LONG).show();
             ////////////////////////////////////////////// Missing !!!! We need to update all the User singleton at each swap !
             int index = mAccounts.indexOf(mAccount);
             mAdapter.notifyDataSetChanged();
@@ -161,7 +164,7 @@ public class AccountListFragment extends Fragment {
         }
 
         public void bindAccount(Account account, AccountListHolder holder ) {
-            AccountManager mAccountManager;
+            final AccountManager mAccountManager;
             mAccountManager = AccountManager.get(getActivity().getApplicationContext());
 
             String fullName = mAccountManager.getUserData(account, PARAM_USER_FIRST_NAME);
@@ -191,6 +194,10 @@ public class AccountListFragment extends Fragment {
                         public boolean onMenuItemClick(MenuItem item) {
                             switch (item.getItemId()) {
                                 case R.id.options_menu_account_item_edit:
+                                    //TODO be able to edit the properties of the account
+                                    Intent i = new Intent(getContext(),QueryPreferences.class);
+                                    startActivity(i);
+                                    //mAccountManager.editProperties();
                                     //handle menu1 click
                                     break;
                                 case R.id.options_menu_account_item_remove:

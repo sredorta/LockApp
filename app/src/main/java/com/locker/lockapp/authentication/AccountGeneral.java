@@ -106,6 +106,9 @@ public class AccountGeneral {
                 intent.putExtra(ARG_ACCOUNT_AUTH_TYPE,this.mAccountAuthType);
         }
 
+        // TODO for the moment when we create an account for settings we are creating by default full_access
+        if (mAccountAuthType == null) mAccountAuthType = AUTHTOKEN_TYPE_FULL_ACCESS;
+
         Logs.i("ACCOUNT_NAME: " + mAccountName, this.getClass());
         Logs.i("ACCOUNT_TYPE: " + mAccountType, this.getClass());
         Logs.i("ACCOUNT_AUTH_TYPE: " + mAccountAuthType, this.getClass());
@@ -177,6 +180,7 @@ public class AccountGeneral {
         mAccountManager.setUserData(account, PARAM_USER_PHONE, this.getAccountPhone());
         mAccountManager.setUserData(account, PARAM_USER_FIRST_NAME, this.getAccountFirstName());
         mAccountManager.setUserData(account, PARAM_USER_LAST_NAME, this.getAccountLastName());
+
         Account myAccount = null;
         //Verifiy if account was correctly created
         myAccount = getAccount();

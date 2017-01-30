@@ -165,6 +165,7 @@ public class SignUpFragment extends Fragment {
                 data.putString(AccountManager.KEY_ACCOUNT_NAME, myAccountSettings.getAccountName());
                 data.putString(AccountManager.KEY_ACCOUNT_TYPE, myAccountSettings.getAccountType());
                 data.putString(AccountManager.KEY_AUTHTOKEN, myAccountSettings.getAccountToken());
+
                 final Intent res = new Intent();
                 res.putExtras(data);
                 return res;
